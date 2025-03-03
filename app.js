@@ -18,9 +18,9 @@ app.once('ready', () => {
   electron.session.defaultSession.setUserAgent(userAgent);
 
   ipcInstance.on('SEND_CONFIG', (data, socket) => {
-    const { url, position, width, height, x, y } = data;
+    const { url, position, width, height, fullScreen, x, y } = data;
 
-    const usingXY = x && y;
+    const usingXY = fullScreen || x && y;
 
     // electron
     const windowOptions = {

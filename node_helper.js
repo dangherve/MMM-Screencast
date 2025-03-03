@@ -13,9 +13,9 @@ module.exports = NodeHelper.create({
 	socketNotificationReceived: function(notification, payload) {
 		switch (notification) {
 			case 'SET_CONFIG':
-				const { x, y, position } = payload;
+				const { fullScreen, x, y, position } = payload;
 
-				if (!(x && y) && !POSITIONS[position]) {
+				if (!(fullScreen ||x && y) && !POSITIONS[position]) {
 					const message = 'There was an error with your positioning config. Please check your config.'
 					console.error(`${MODULE_NOTIFICATIONS.config_error}: ${message}`);
 					this.sendSocketNotification(MODULE_NOTIFICATIONS.config_error, { message });
