@@ -62,3 +62,4 @@ dir_to_ignore/
 
 .DS_Store
 **/.DS_Store
+!buildTools
