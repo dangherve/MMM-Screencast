@@ -64,3 +64,5 @@ dir_to_ignore/
 **/.DS_Store
 
 !buildTools
+
+!.woodpecker
